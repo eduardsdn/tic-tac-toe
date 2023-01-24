@@ -1,0 +1,163 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Indie Flower', cursive;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.body{
+    background-color: #e6e4e4;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    gap: 30px;
+}
+
+.title{
+    display: flex;
+    font-size: 80px;
+}
+
+#T{
+    color: #4285F4
+}
+
+#i{
+    color: #34A853
+}
+
+#c{
+    color: #FBBC05
+}
+
+#T2{
+    color: #EA4335
+}
+
+#a{
+    color: #4285F4
+}
+
+#c2{
+    color: #34A853
+}
+
+#T3{
+    color: #FBBC05
+}
+
+#o{
+    color: #EA4335
+}
+
+#e{
+    color: #4285F4
+}
+
+.gameboard{
+    width: fit-content;
+    height: fit-content;
+    border-radius: 18px;
+    padding: 15px;
+    border: solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    background-color: #FFFFFF;
+    border: inherit;
+}
+
+.tile{
+    width:  200px;
+    height: 200px;
+    border-style: ridge;
+    border: solid;
+    border-width: 2px;
+    border-radius: 18px;
+}
+
+#one{
+    border-color: #4285F4;
+}
+
+#two {
+    border-color:#34A853;
+}
+
+#three {
+    border-color:#FBBC05;
+}
+
+#four{
+    border-color:#EA4335;
+}
+
+#five{
+    border-color: #4285F4;
+}
+
+#six{
+    border-color:#34A853;
+}
+
+#seven{
+    border-color:#FBBC05;
+}
+
+#eight{
+    border-color:#EA4335;
+}
+
+#nine{
+    border-color: #4285F4;
+}   
