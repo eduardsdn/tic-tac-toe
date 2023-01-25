@@ -118,6 +118,10 @@ table {
 }
 
 .tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
     width:  200px;
     height: 200px;
     border-style: ridge;

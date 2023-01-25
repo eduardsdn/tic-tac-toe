@@ -1,12 +1,26 @@
 
 
 function Game(){
-    
+
 }
 
-function Player(marker){
+// supposively player should haver marker attribute
+function Player(){             
     this.markTile = function(){
-        
+        // marks here temporary
+        marks = [0,1,0,1,0,1,0,1,0] 
+
+        tiles = document.querySelectorAll(".tile")
+        tilesArray = [].slice.call(tiles, 0)
+        for(let i = 0; i < tilesArray.length; i++){
+            tilesArray[i].addEventListener('click', function(){
+                if(tilesArray[i].id === "one"){
+                    marks[i] = 1
+                    console.log(marks)
+                }
+            })
+        }
+        return marks
     }
 }
 
@@ -34,8 +48,11 @@ function GameBoard(){
 }
 
 gameBoard = new GameBoard
+player = new Player
 
-gameBoard.updateGameBoard()
+player.markTile()
+
+// gameBoard.updateGameBoard()
 
 
 
