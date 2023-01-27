@@ -1,30 +1,36 @@
 // for marks 0 = "O" 1 = "X" 2 = Blank tile
 
 function Game(){
+    this.isOver = false
 
     // this.createPlayers = function(){
     //     player1 = new Player("X")
     //     player2 = new Player("O")
-    //     return [player1, player2]
     // }
 
-    playerX = new Player("X")
-    playerO = new Player("O")
 
-    gameBoard = new GameBoard
 
-    playerO.markTile(gameBoard.getMarks())
+    // this.playGame = function(){
+    //     // this.createPlayers()
+
+       
+
+    //     // else if(gameBoard.turn === 1){
+    //     //     player2.markTile(gameBoard.getMarks())
+    //     // }
+    // }
     
-    gameBoard.updateGameBoard()
 
 }
 
 
-function Player(marker){             
-
+function Player(marker){
+    
     this.marker = marker
 
-    this.markTile = function(marks){
+    this.markTile = function(){
+
+        marks = gameBoard.marks
     
         if (this.marker === "X"){
             marker = 1
@@ -33,6 +39,15 @@ function Player(marker){
             marker = 0
         }
 
+        bebe = function(){
+    if(gameBoard.turn === 0){
+        player1.markTile()
+    }
+    if(gameBoard.turn === 1){
+        player2.markTile()
+    }
+}
+
         tiles = document.querySelectorAll(".tile")
         tilesArray = [].slice.call(tiles, 0)
         for(let i = 0; i < tilesArray.length; i++){
@@ -40,7 +55,7 @@ function Player(marker){
                 if(tilesArray[i].id === "one"){
                     marks[0] = marker
                     gameBoard.updateGameBoard()
-                    // console.log(gameBoard.marks)
+                    console.log(gameBoard.turn)
                 }
                 else if(tilesArray[i].id === "two"){
                     marks[1] = marker
@@ -73,7 +88,7 @@ function Player(marker){
                 else if(tilesArray[i].id === "nine"){
                     marks[8] = marker
                     gameBoard.updateGameBoard()
-                }        
+                }      
             })
         } 
     }
@@ -83,6 +98,7 @@ function Player(marker){
 function GameBoard(){
 
     this.marks = [2,2,2,2,2,2,2,2,2]
+    this.turn = 0
 
     this.updateGameBoard = function(){
         tiles = document.querySelectorAll(".tile")
@@ -102,6 +118,8 @@ function GameBoard(){
                 tilesArray[i].innerText ="X"
             }
         }
+
+        this.turn ++
     }
 
     this.getMarks = function(){
@@ -109,5 +127,19 @@ function GameBoard(){
     }
 }
 
-game = new Game
+
+game = new Game()
+gameBoard = new GameBoard()
+player1 = new Player("X")
+player2 = new Player("O")
+// game.playGame()
+
+// player1.markTile()
+
+//checker needs to work every iteration
+
+
+
+
+
 
