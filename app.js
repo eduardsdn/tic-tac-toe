@@ -2,25 +2,33 @@
 
 function Game(){
     this.isOver = false
+    this.turn = 0
 
-    // this.createPlayers = function(){
-    //     player1 = new Player("X")
-    //     player2 = new Player("O")
-    // }
+    this.createPlayers = function(){
+        players = []
+        const player1 = new Player("X")
+        const player2 = new Player("O")
+        players.push(player1, player2)
+    }
 
+    this.createGameBoard = function(){
+        gameBoard = new GameBoard()
+    }
 
+    this.createPlayers()
+    this.createGameBoard()
 
-    // this.playGame = function(){
-    //     // this.createPlayers()
-
-       
-
-    //     // else if(gameBoard.turn === 1){
-    //     //     player2.markTile(gameBoard.getMarks())
-    //     // }
-    // }
     
-
+    
+    this.playGame = function(){
+        if(this.turn % 2 === 0){
+            players[0].markTile(gameBoard.getMarks())
+        }
+        else if (this.turn % 2 !== 0){
+            players[1].markTile(gameBoard.getMarks())
+        }
+        
+    } 
 }
 
 
@@ -39,15 +47,6 @@ function Player(marker){
             marker = 0
         }
 
-        bebe = function(){
-    if(gameBoard.turn === 0){
-        player1.markTile()
-    }
-    if(gameBoard.turn === 1){
-        player2.markTile()
-    }
-}
-
         tiles = document.querySelectorAll(".tile")
         tilesArray = [].slice.call(tiles, 0)
         for(let i = 0; i < tilesArray.length; i++){
@@ -55,39 +54,56 @@ function Player(marker){
                 if(tilesArray[i].id === "one"){
                     marks[0] = marker
                     gameBoard.updateGameBoard()
-                    console.log(gameBoard.turn)
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "two"){
                     marks[1] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "three"){
                     marks[2] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "four"){
                     marks[3] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "five"){
                     marks[4] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "six"){
                     marks[5] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "seven"){
                     marks[6] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "eight"){
                     marks[7] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }
                 else if(tilesArray[i].id === "nine"){
                     marks[8] = marker
                     gameBoard.updateGameBoard()
+                    game.turn ++
+                    game.playGame()
                 }      
             })
         } 
@@ -98,7 +114,6 @@ function Player(marker){
 function GameBoard(){
 
     this.marks = [2,2,2,2,2,2,2,2,2]
-    this.turn = 0
 
     this.updateGameBoard = function(){
         tiles = document.querySelectorAll(".tile")
@@ -118,25 +133,29 @@ function GameBoard(){
                 tilesArray[i].innerText ="X"
             }
         }
-
-        this.turn ++
     }
 
     this.getMarks = function(){
         return this.marks
     }
+
+    this.getTurn = function(){
+        return this.turn
+    }
 }
 
 
-game = new Game()
-gameBoard = new GameBoard()
-player1 = new Player("X")
-player2 = new Player("O")
-// game.playGame()
+const game = new Game()
+// gameBoard = new GameBoard()
+// player1 = new Player("X")
+// player2 = new Player("O")
+game.playGame()
 
 // player1.markTile()
 
 //checker needs to work every iteration
+
+
 
 
 
