@@ -164,4 +164,13 @@ table {
 
 #nine{
     border-color: #4285F4;
-}   
+}
+
+.X::before
+{
+    content: "X";
+}
+
+.O::before{
+    content: "O"
+}
