@@ -1,6 +1,10 @@
 function Game(){
     // true X turn, false O turn
     this.whosTurn = true 
+
+    this.swapTurn = function(){
+        game.whosTurn = !this.whosTurn
+    }
 }
 
 function Player(marker){
@@ -18,6 +22,7 @@ function GameBoard(){
         const tile = e.target
         const currentPlayer = game.whosTurn ? playerX.marker : playerO.marker
         gameBoard.MarkTile(tile, currentPlayer)
+        game.swapTurn()
     }
 
     this.tiles.forEach(tile => {
@@ -28,11 +33,8 @@ function GameBoard(){
         tile.classList.add(currentPlayer)
     }
 
-   
 }
 
 game = new Game
-
-
 
 gameBoard = new GameBoard
