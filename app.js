@@ -29,6 +29,7 @@ function Game(){
                 }
                 if(counterX === 3){
                     console.log("X-win")
+                    this.gameOver("X")
                 }
     
                 if(tilesArray[this.winningCombinations[i][j]].classList.contains("O")){
@@ -36,20 +37,23 @@ function Game(){
                 }
                 if(counterO === 3){
                     console.log("O-win")
+                    this.gameOver("O")
                 }
             }
             
         }    
+    }
+
+    this.gameOver = function(whoWon){
+        document.querySelector(".wrapper-game-on").style.display = "none"
+        document.querySelector(".wrapper-game-over").classList.add("show") 
+        document.querySelector(".winner").innerHTML = `${whoWon} is the Winner`
     }
 }
 
 function Player(marker){
     this.marker = marker
 }
-
-const playerX = new Player("X")
-const playerO = new Player("O")
-
 
 function GameBoard(){
     this.tiles = document.querySelectorAll(".tile")
@@ -72,16 +76,9 @@ function GameBoard(){
 }
 
 const game = new Game
-
 const gameBoard = new GameBoard
 
+const playerX = new Player("X")
+const playerO = new Player("O")
 
 
-
-
-
-// && winningCombinations[i][j] === tilesArray[j]
-
-// if(tilesArray[winningCombinations[i][j]].classList.contains("X") && tilesArray[winningCombinations[i][j]].classList.contains("X") && tilesArray[winningCombinations[i][j+2]].classList.contains("X")){
-            //     console.log("X-win")
-            // }

@@ -11,7 +11,7 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper-game-on">
         <h1 class="title"><div id="T">T</div><div id="i">i</div><div id="c">c</div> <div id="T2">T</div><div id="a">a</div><div id="c2">c</div> <div id="T3">T</div><div id="o">o</div><div id="e">e</div></h1>
         <div class="gameboard">
             <div class="tile" id="one"></div>
@@ -24,6 +24,11 @@
             <div class="tile" id="eight"></div>
             <div class="tile" id="nine"></div>
         </div>
+    </div>
+
+    <div class="wrapper-game-over">
+        <h1 class="winner">X wins!</h1>
+        <button class="restartBtn">Restart Game</button>
     </div>
 
     <script src="app.js"></script>

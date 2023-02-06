@@ -52,7 +52,7 @@ table {
     background-color: #e6e4e4;
 }
 
-.wrapper{
+.wrapper-game-on{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,4 +173,39 @@ table {
 
 .O::before{
     content: "O"
+}
+
+/* Game over screen */
+
+.wrapper-game-over{
+    display: none;
+    padding-top: 15%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner{
+    font-size: 200px;
+}
+
+.restartBtn{
+    border-radius: 15px;
+    border-style: inherit;
+    background-color: #FBBC05;
+    font-family:'Indie Flower', cursive;
+    font-size: 40px;
+    padding: 20px;
+}
+
+.restartBtn:hover{
+    background-color: #34A853;
+}
+
+.show{
+    display: flex;
+    padding-top: 15%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
