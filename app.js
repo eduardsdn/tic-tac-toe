@@ -1,5 +1,4 @@
 function Game(){
-    // true X turn, false O turn
     this.whosTurn = true 
 
     this.turnNumber = 0
@@ -79,7 +78,7 @@ function Player(marker){
 function GameBoard(){
     this.tiles = document.querySelectorAll(".tile")
 
-    const handleClick = function(e) {
+    this.handleClick = function(e) {
         const tile = e.target
         const currentPlayer = game.whosTurn ? playerX.marker : playerO.marker
         gameBoard.MarkTile(tile, currentPlayer)
@@ -90,7 +89,7 @@ function GameBoard(){
     }
 
     this.tiles.forEach(tile => {
-        tile.addEventListener('click', handleClick, {once: true})
+        tile.addEventListener('click', this.handleClick, {once: true})
     })
 
     this.MarkTile = function(tile, currentPlayer){
@@ -103,9 +102,3 @@ const gameBoard = new GameBoard
 
 const playerX = new Player("X")
 const playerO = new Player("O")
-
-
-// const classNames = ["X", "O"]
-// if((classNames.some(className => tilesArray.forEach(tile => tile.classList.contains(className)))) && counterO < 3 && counterX < 3){
-//     console.log("draw")
-// }
