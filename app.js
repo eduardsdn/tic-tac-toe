@@ -63,10 +63,11 @@ function Game(){
         document.querySelector(".wrapper-game-on").style.display = "none"
         document.querySelector(".wrapper-game-over").classList.add("show")
         if(this.isGameWon === true){
-            document.querySelector(".winner").innerHTML = `${whoWon} is the Winner`
+            document.querySelector(".winner").innerHTML = `${whoWon}`
+            document.querySelector(".winner")
         }
         else if(this.isGameDraw == true){
-            document.querySelector(".winner").innerHTML = whoWon
+            document.querySelector(".winnerAnnouncment").innerHTML = whoWon
         }
     }
 }
